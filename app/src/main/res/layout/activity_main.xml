@@ -6,16 +6,56 @@
     android:layout_height="match_parent"
     tools:context="com.radh.krish.MainActivity">
 
+
+
+    <TextView
+        android:id="@+id/temptValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dataReceived"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Temperature:"
+        android:background="@drawable/back"/>
+
+
     <TextView
         android:id="@+id/dataReceived"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginTop="70dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@id/temptValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/back"
+        app:layout_constraintBaseline_toBaselineOf="@id/temptValue"
+         />
+    <TextView
+        android:id="@+id/pressValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pressReceived"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintBottom_toBottomOf="@+id/temptValue"
+        android:text="Pressure:"
+        android:background="@drawable/back"/>
+
+
+    <TextView
+        android:id="@+id/pressReceived"
+        android:layout_width="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/temptValue"
+        app:layout_constraintBottom_toBottomOf="@id/dataReceived"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/back"
+        app:layout_constraintBaseline_toBaselineOf="@id/pressValue"
+        />
+
+
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart"
